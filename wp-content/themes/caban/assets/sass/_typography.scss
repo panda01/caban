@@ -1,0 +1,131 @@
+html,
+body {
+	font-size: 24px;
+	line-height: 1.5rem;
+}
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	line-height: 1.17rem;
+	+ {
+		h1, h2, h3, h4, h5, h6, p {
+			margin-top: 1.5rem;
+		}
+	}
+}
+p {
+	+ p {
+		margin-top: 1.5rem;
+	}
+}
+h1 {
+	font-size: 5rem;
+	line-height: 5.5rem;
+	+ {
+		h1, h2, h3, h4, h5, h6, p {
+			margin-top: 5.5rem;
+		}
+	}
+}
+h2 {
+	font-size: 2.5rem;
+	line-height: 3rem;
+	+ {
+		h1, h2, h3, h4, h5, h6, p {
+			margin-top: 3rem;
+		}
+	}
+}
+h3 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+	+ {
+		h1, h2, h3, h4, h5, h6, p {
+			margin-top: 2.5rem;
+		}
+	}
+}
+h4 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	+ {
+		h1, h2, h3, h4, h5, h6, p {
+			margin-top: 2rem;
+		}
+	}
+}
+h5 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	+ {
+		h1, h2, h3, h4, h5, h6, p {
+			margin-top: 1.75rem;
+		}
+	}
+}
+// At "largetop" screens some fonts are a bit different
+@media screen and (min-width: 1600px) {
+	html, body {
+		font-size: 15px;
+		line-height: 21px;
+	}
+	h2 {
+		font-size: 4rem;
+		line-height: 4.4rem;
+	}
+}
+
+ol, ul {
+	margin: 1.5rem 0;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #666;
+	margin-bottom: 1.6em;
+	max-width: calc(100vw - (1.6rem * 2));
+	overflow: auto;
+	padding: 1.6rem;
+}
+
+strong, b {
+	font-weight: bold;
+}
+code, kbd, tt, var {
+	font-size: 0.9375rem;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #666;
+	text-decoration: none;
+}
+
+big {
+	font-size: 1.25rem;
+}
+small {
+	font-size: 0.75rem;
+}

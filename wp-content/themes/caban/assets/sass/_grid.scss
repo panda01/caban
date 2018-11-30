@@ -1,0 +1,145 @@
+/*
+ *
+ * 	Sass Grid!
+ * 	An Awesome simple grid with actual columns, that prioritizes minimal mark up!
+ * 	Author: Khalah Jones-Golden<khasan222@gmail.com>
+ *
+ *
+ */
+
+@function calc_percent($divisor, $dividend) {
+	@return $divisor / $dividend * 100%
+}
+@function should_have_width_override($loopbreakpoint, $fnbreakpoint) {
+	@if $loopbreakpoint == $fnbreakpoint {
+		@return false;
+	}
+	@if $fnbreakpoint == 'largetop' {
+		@return false;
+	}
+	@if $fnbreakpoint == 'tablet' {
+		@return false;
+	}
+	@return true;
+}
+$responsive_breakpoints: (
+	"mobile": 		768px,
+	"tablet": 		960px,
+	"desktop": 		1600px,
+	"largetop": 	1920px
+
+);
+$responsive_side_margins: (
+	"mobile": 		30px,
+	"tablet": 		40px,
+	"desktop": 		100px,
+	"largetop": 	130px
+);
+// total width is simply (num_cols * col_width + num_cols * gutter_width)
+// Need to make it so that way you just give it col width and gutter width and we're alright
+$responsive_col_width: (
+	"mobile": 		calc_percent(18, 324),
+	"tablet": 		calc_percent(39, 708), // FIXME Pretty sure this should be 708=(12 * 39 + 12 * 20), but that doesn't work?!?
+	"desktop": 		calc_percent(90, 1236),
+	"largetop": 	calc_percent(120, 1660)
+);
+$responsive_gutter_width: (
+	"mobile": 		calc_percent(9, 324),
+	"tablet": 		calc_percent(20, 708), // FIXME Pretty sure this should be 708=(12*39 + 12*20), but that doesn't work?!?
+	"desktop": 		calc_percent(13, 1236),
+	"largetop": 	calc_percent(20, 1660)
+);
+
+$num_grid_columns: 12;
+
+.container {
+	box-sizing: border-box;
+	width: 100%;
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: space-around;
+		position: relative;
+	}
+}
+@mixin cols($breakpoint) {
+	$breakpoint_container_margin: 		map-get($responsive_side_margins, $breakpoint);
+	$gutter_width: 						map-get($responsive_gutter_width, $breakpoint);
+	$col_width: 						map-get($responsive_col_width, $breakpoint);
+	.container {
+		padding-left: $breakpoint_container_margin;
+		padding-right: $breakpoint_container_margin;
+
+		.row {
+			margin-left: $gutter_width * -0.5;
+			margin-right: $gutter_width * -0.5;
+			// margin-bottom: -$gutter_width;
+			.demo {
+				min-height: 30vh;
+				background-color: blue;
+				margin-bottom: $gutter_width;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			@each $margin_breakpoint_key in map-keys($responsive_breakpoints) {
+				@if should_have_width_override($margin_breakpoint_key, $breakpoint) {
+					[class*="col-#{$margin_breakpoint_key}-"] {
+						margin-left: $gutter_width / 2;
+						margin-right: $gutter_width / 2;
+						flex-basis: 100% - $gutter_width;
+						max-width: 100% - $gutter_width;
+					}
+				}
+			}
+			@for $col_num from 1 through $num_grid_columns {
+				.order-#{$breakpoint}-#{$col_num} {
+					order: $col_num - 6;
+				}
+				$calc_col_width: ($col_num * $col_width) + (($col_num - 1) * $gutter_width);
+				.col-#{$breakpoint}-#{$col_num} {
+					flex-basis: $calc_col_width;
+					margin-left: $gutter_width / 2;
+					margin-right: $gutter_width / 2;
+					max-width: $calc_col_width;
+				}
+				.offset-#{$breakpoint}-#{$col_num} {
+					margin-left: $calc_col_width + $gutter_width * 1.5 !important;
+				}
+			}
+		}
+	}
+	// TODO
+	// Do we really need this?
+	// and if we keep it, shouldn't it be display-mobile-none to keep with the format above?
+	.display-none-#{$breakpoint} {
+		display: none;
+	}
+}
+
+
+$last_breakpoint_width: 0;
+@each $breakpoint in map-keys($responsive_breakpoints) {
+	$breakpoint_width: map-get($responsive_breakpoints, $breakpoint);
+	@if $breakpoint == 'desktop' {
+		@media screen and (min-width: ($last_breakpoint_width + 1)) {
+			@include cols($breakpoint);
+		}
+	} @else if $breakpoint == 'largetop' {
+		@media screen and (min-width: $last_breakpoint_width) {
+			@include cols($breakpoint);
+		}
+	} @else if $breakpoint == 'mobile' {
+		$tablet_width: map-get($responsive_breakpoints, "tablet");
+		@media screen and (max-width: $tablet_width) {
+			@include cols($breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $last_breakpoint_width) and (max-width: $breakpoint_width) {
+			@include cols($breakpoint);
+		}
+	}
+	$last_breakpoint_width: map-get($responsive_breakpoints, $breakpoint);
+}

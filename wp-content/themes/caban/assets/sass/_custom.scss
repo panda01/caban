@@ -1,0 +1,161 @@
+%full_background_img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+}
+$blue: #1797A6;
+$green: #77B327;
+$black: #2D2D2D;
+$grey: #E5E5E7;
+body {
+	background-color: #fff;
+	font-family: 'Akademie Std';
+}
+.btn {
+	font-size: 24px;
+	text-transform: uppercase;
+	text-decoration: none;
+	height: 88px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $blue;
+	border: 2px solid $blue;
+	&.blue {
+		color: $blue;
+		border-color: $blue;
+	}
+	&.green {
+		color: $green;
+		border-color: $green;
+	}
+	&.black {
+		color: $black;
+		border-color: $black;
+	}
+}
+
+.module {
+	&.hero_section {
+		height: 100vh;
+		clip: rect(0, auto, auto, 0);
+		clip-path: inset(0 0 0 0);
+		.hero_img_wrapper {
+			position: fixed;
+			@extend %full_background_img;
+			background-image: url('../images/caban-heroimage.jpg');
+		}
+		.inner_wrap {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.hero_cont_wrapper {
+			> .headline_text {
+				margin-top: 55px;
+				margin-bottom: 55px;
+				color: $black;
+			}
+		}
+	}
+	&.problem_section {
+		align-items: center;
+		clip: rect(0, auto, auto, 0);
+		clip-path: inset(0 0 0 0);
+		height: 100vh;
+		position: relative;
+		.problem_img_wrapper {
+			position: fixed;
+			@extend %full_background_img;
+			background-image: url('../images/caban-banner.jpg');
+		}
+		.inner_wrap {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.big_number {
+			text-align: center;
+			color: $green;
+		}
+		.copy {
+			text-align: center;
+		}
+	}
+	&.solution {
+		padding-top: 100px;
+		padding-bottom: 100px;
+		background: linear-gradient(360deg,  $grey 100%, rgba(229, 229, 231, 0.0001) -1.68%);
+		.main_title {
+			margin-bottom: 15px;
+		}
+		.cabinet_wrapper {
+			margin-top: 155px;
+			margin-bottom: 115px;
+		}
+		.features_wrap {
+			margin-top: 120px;
+			margin-bottom: 100px;
+			display: flex;
+			.icon_wrapper {
+				margin-bottom: 42px;
+			}
+			.title {
+				height: 62px;
+				margin-top: 25px;
+				margin-bottom: 29px;
+			}
+		}
+	}
+	&.diagram {
+		color: $black;
+		padding-top: 100px;
+		padding-bottom: 100px;
+		.title {
+			margin-bottom: 50px;
+			position: relative;
+			z-index: 1;
+		}
+		.summary {
+			position: relative;
+			z-index: 1;
+		}
+		.diagram_img {
+			position: relative;
+			top: -150px;
+		}
+	}
+	&.solution_in_depth {
+		padding-top: 100px;
+		padding-bottom: 100px;
+		background: linear-gradient(360deg, rgba(229, 229, 231, 0.0001) -1.68%, $grey 100%);
+		color: $black;
+		.main_title {
+			margin-bottom: 40px;
+		}
+		.facts {
+			margin-top: 160px;
+			display: flex;
+		}
+		.big_number {
+			color: $blue;
+		}
+	}
+	&.purchase {
+		background-color: $grey;
+		padding-top: 115px;
+		padding-bottom: 115px;
+	}
+	&.about_caban {
+		padding-top: 115px;
+		padding-bottom: 115px;
+		color: $black;
+		.summary {
+			margin-top: 60px;
+		}
+		.call_to_action {
+			margin-top: 100px;
+		}
+	}
+}
