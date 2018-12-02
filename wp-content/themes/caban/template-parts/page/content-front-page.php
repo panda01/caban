@@ -18,4 +18,6 @@
 		</div>
 	<?php endforeach; ?>
 
+<?php /*
 <pre><?php print_r(get_fields(get_the_ID())); ?></pre>
+ */ ?>
