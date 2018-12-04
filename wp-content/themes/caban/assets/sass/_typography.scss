@@ -1,7 +1,9 @@
 html,
 body {
-	font-size: 24px;
-	line-height: 1.5rem;
+	font-family:'Avenir W01';
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 25px;
 }
 body,
 button,
@@ -11,50 +13,48 @@ optgroup,
 textarea {
 	color: #ffffff;
 }
-h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
-	line-height: 1.17rem;
-	+ {
-		h1, h2, h3, h4, h5, h6, p {
-			margin-top: 1.5rem;
-		}
-	}
-}
 p {
 	+ p {
-		margin-top: 1.5rem;
+		margin-top: 25px;
 	}
 }
+a {
+	font-weight: 700;
+}
 h1 {
-	font-size: 5rem;
-	line-height: 5.5rem;
+	font-size: 120px;
+	line-height: 164px;
+	font-weight: 750;
 	+ {
 		h1, h2, h3, h4, h5, h6, p {
-			margin-top: 5.5rem;
+			margin-top: 164px;
 		}
 	}
 }
 h2 {
-	font-size: 2.5rem;
-	line-height: 3rem;
+	font-size: 60px;
+	line-height: 70px;
+	font-weight: 700;
 	+ {
 		h1, h2, h3, h4, h5, h6, p {
-			margin-top: 3rem;
+			margin-top: 70px;
 		}
 	}
 }
 h3 {
-	font-size: 2rem;
-	line-height: 2.5rem;
+	font-size: 54px;
+	line-height: 65px;
+	font-weight: 550;
 	+ {
 		h1, h2, h3, h4, h5, h6, p {
-			margin-top: 2.5rem;
+			margin-top: 65px;
 		}
 	}
 }
 h4 {
-	font-size: 1.5rem;
-	line-height: 2rem;
+	font-size: 28px;
+	line-height: 40px;
+	font-weight: 550;
 	+ {
 		h1, h2, h3, h4, h5, h6, p {
 			margin-top: 2rem;
@@ -62,11 +62,22 @@ h4 {
 	}
 }
 h5 {
-	font-size: 1.25rem;
-	line-height: 1.75rem;
+	font-size: 28px;
+	line-height: 40px;
+	font-weight: 300;
 	+ {
 		h1, h2, h3, h4, h5, h6, p {
-			margin-top: 1.75rem;
+			margin-top: 40px;
+		}
+	}
+}
+h6 {
+	font-size: 18px;
+	line-height: 25px;
+	font-weight: 300;
+	+ {
+		h1, h2, h3, h4, h5, h6, p {
+			margin-top: 25px;
 		}
 	}
 }

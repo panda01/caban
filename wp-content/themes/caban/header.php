@@ -18,6 +18,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/8b9a970d-446d-49a7-acf7-d0afa8d64c92.css"/>
 
 <?php wp_head(); ?>
 </head>

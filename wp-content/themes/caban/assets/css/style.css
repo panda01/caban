@@ -607,8 +607,10 @@ table {
   src: url("../fonts/NBAkademieStd-Bold.ttf") format("truetype"); }
 html,
 body {
-  font-size: 24px;
-  line-height: 1.5rem; }
+  font-family: 'Avenir W01';
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px; }
 
 body,
 button,
@@ -618,44 +620,53 @@ optgroup,
 textarea {
   color: #ffffff; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-  line-height: 1.17rem; }
-  h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6, h1 + p, h2 + h1, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6, h2 + p, h3 + h1, h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6, h3 + p, h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6, h4 + p, h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6, h5 + p, h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6, h6 + p {
-    margin-top: 1.5rem; }
-
 p + p {
-  margin-top: 1.5rem; }
+  margin-top: 25px; }
+
+a {
+  font-weight: 700; }
 
 h1 {
-  font-size: 5rem;
-  line-height: 5.5rem; }
+  font-size: 120px;
+  line-height: 164px;
+  font-weight: 750; }
   h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6, h1 + p {
-    margin-top: 5.5rem; }
+    margin-top: 164px; }
 
 h2 {
-  font-size: 2.5rem;
-  line-height: 3rem; }
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: 700; }
   h2 + h1, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6, h2 + p {
-    margin-top: 3rem; }
+    margin-top: 70px; }
 
 h3 {
-  font-size: 2rem;
-  line-height: 2.5rem; }
+  font-size: 54px;
+  line-height: 65px;
+  font-weight: 550; }
   h3 + h1, h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6, h3 + p {
-    margin-top: 2.5rem; }
+    margin-top: 65px; }
 
 h4 {
-  font-size: 1.5rem;
-  line-height: 2rem; }
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 550; }
   h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6, h4 + p {
     margin-top: 2rem; }
 
 h5 {
-  font-size: 1.25rem;
-  line-height: 1.75rem; }
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 300; }
   h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6, h5 + p {
-    margin-top: 1.75rem; }
+    margin-top: 40px; }
+
+h6 {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 300; }
+  h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6, h6 + p {
+    margin-top: 25px; }
 
 @media screen and (min-width: 1600px) {
   html, body {
@@ -749,6 +760,8 @@ body {
 
 .btn {
   font-size: 24px;
+  line-height: 23px;
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
   height: 88px;
@@ -801,7 +814,8 @@ body {
 .module.solution {
   padding-top: 100px;
   padding-bottom: 100px;
-  background: linear-gradient(360deg, #E5E5E7 100%, rgba(229, 229, 231, 0.0001) -1.68%); }
+  background: linear-gradient(to bottom, #ffffff 0%, #E5E5E7 100%);
+  color: #2D2D2D; }
   .module.solution .main_title {
     margin-bottom: 15px; }
   .module.solution .cabinet_wrapper {
@@ -809,8 +823,7 @@ body {
     margin-bottom: 115px; }
   .module.solution .features_wrap {
     margin-top: 120px;
-    margin-bottom: 100px;
-    display: flex; }
+    margin-bottom: 100px; }
     .module.solution .features_wrap .icon_wrapper {
       margin-bottom: 42px; }
     .module.solution .features_wrap .title {
@@ -855,5 +868,16 @@ body {
     margin-top: 60px; }
   .module.about_caban .call_to_action {
     margin-top: 100px; }
+
+@media screen and (max-width: 960px) {
+  .module.hero_section, .module.problem_section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: auto; }
+    .module.hero_section .inner_wrap, .module.problem_section .inner_wrap {
+      top: 0;
+      transform: none; }
+  .module.diagram .diagram_img {
+    top: 0; } }
 
 /*# sourceMappingURL=style.css.map */

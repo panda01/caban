@@ -4,3 +4,7 @@
 @import "typography";
 @import "helpers";
 @import "custom";
+
+@media screen and (max-width: 960px) {
+	@import "mobile";
+}

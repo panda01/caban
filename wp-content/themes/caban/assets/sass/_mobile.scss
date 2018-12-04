@@ -1,0 +1,17 @@
+.module {
+	&.hero_section,
+	&.problem_section {
+		padding-top: 100px;
+		padding-bottom: 100px;
+		height: auto;
+		.inner_wrap {
+			top: 0;
+			transform: none;
+		}
+	}
+	&.diagram {
+		.diagram_img {
+			top: 0;
+		}
+	}
+}

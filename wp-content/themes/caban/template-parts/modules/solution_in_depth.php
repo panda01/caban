@@ -5,7 +5,7 @@
 	<div class="col-desktop-6">
 		<h2 class="main_title"><?= $module_items['main_title'] ?></h2>
 		<h5 class="main_summary"><?= $module_items['main_summary'] ?></h5>
-		<div class="facts">
+		<div class="row facts">
 			<div class="col-desktop-2"></div>
 			<?php for($i = 1; $i <= 2; $i++): ?>
 				<div class="fact col-desktop-4">

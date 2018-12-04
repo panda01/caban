@@ -17,11 +17,11 @@
 		Interior
 	</div>
 	<div class="col-desktop-12"></div>
-	<div class="features_wrap">
+	<div class="features_wrap row">
 		<?php for($i = 1; $i <= 4; $i++): ?>
 			<div class="feature col-desktop-3">
 				<div class="icon_wrapper text_align_center">
-					<img src="<?= get_stylesheet_directory_uri() . $module_items['info_pic_' . $i]; ?>" class="icon" />
+					<img src="<?= get_stylesheet_directory_uri() ?>/assets/images/caban-icon-<?= $i ?>.svg" class="icon" />
 				</div>
 				<h4 class="title text_align_center"><?= $module_items['info_title_' . $i] ?></h4>
 				<p class="text_align_center"><?= $module_items['info_subtext_' . $i] ?></p>
