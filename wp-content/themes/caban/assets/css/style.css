@@ -61,7 +61,7 @@ table {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     align-content: space-around;
     position: relative; }
 
@@ -754,11 +754,7 @@ img {
   bottom: 0;
   background-size: cover; }
 
-body {
-  background-color: #fff;
-  font-family: 'Akademie Std'; }
-
-.btn {
+.btn, .gform_wrapper .gform_footer input[type="submit"] {
   font-size: 24px;
   line-height: 23px;
   font-weight: 700;
@@ -769,16 +765,23 @@ body {
   align-items: center;
   justify-content: center;
   color: #1797A6;
-  border: 2px solid #1797A6; }
-  .btn.blue {
-    color: #1797A6;
-    border-color: #1797A6; }
-  .btn.green {
-    color: #77B327;
-    border-color: #77B327; }
-  .btn.black {
-    color: #2D2D2D;
-    border-color: #2D2D2D; }
+  border: 2px solid #1797A6;
+  background-color: transparent;
+  width: 100%; }
+
+body {
+  background-color: #fff;
+  font-family: 'Akademie Std'; }
+
+.btn.blue {
+  color: #1797A6;
+  border-color: #1797A6; }
+.btn.green {
+  color: #77B327;
+  border-color: #77B327; }
+.btn.black {
+  color: #2D2D2D;
+  border-color: #2D2D2D; }
 
 .module.hero_section {
   height: 100vh;
@@ -854,6 +857,8 @@ body {
   .module.solution_in_depth .facts {
     margin-top: 160px;
     display: flex; }
+    .module.solution_in_depth .facts .summary {
+      margin-top: 20px; }
   .module.solution_in_depth .big_number {
     color: #1797A6; }
 .module.purchase {
@@ -868,6 +873,38 @@ body {
     margin-top: 60px; }
   .module.about_caban .call_to_action {
     margin-top: 100px; }
+
+.site-footer {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background-color: #2D2D2D; }
+  .site-footer .copyright {
+    border-top: 1px solid #fff;
+    padding-top: 60px;
+    margin-top: 60px; }
+
+.gform_wrapper .gform_heading {
+  display: none; }
+.gform_wrapper .gfield + .gfield {
+  margin-top: 60px; }
+.gform_wrapper .gfield .gfield_label {
+  display: none; }
+.gform_wrapper .gfield select,
+.gform_wrapper .gfield input[type="text"] {
+  background-color: transparent;
+  color: #777;
+  border: 0 none transparent;
+  height: 56px !important;
+  line-height: 56px !important;
+  font-size: 30px !important;
+  border-bottom: 1px solid #fff;
+  padding-left: 0 !important; }
+.gform_wrapper .gform_footer {
+  padding: 0;
+  margin: 80px 0 0 0; }
+  .gform_wrapper .gform_footer input[type="submit"] {
+    color: #fff;
+    border-color: #fff; }
 
 @media screen and (max-width: 960px) {
   .module.hero_section, .module.problem_section {

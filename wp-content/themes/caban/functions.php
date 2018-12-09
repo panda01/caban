@@ -9,6 +9,8 @@
  * @since 1.0
  */
 
+require get_template_directory() . '/inc/add-admin-acf-options-page.php';
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -114,7 +116,7 @@ add_action( 'wp_head', 'twentyseventeen_pingback_header' );
  */
 function twentyseventeen_scripts() {
 	// Theme stylesheet.
-	wp_enqueue_style( 'splash-style', get_stylesheet_directory_uri() . "/assets/css/style.css" );
+	// wp_enqueue_style( 'splash-style', get_stylesheet_directory_uri() . "/assets/css/style.css" );
 	wp_enqueue_script( 'jquery', "https://code.jquery.com/jquery-3.3.1.js", true );
 	wp_enqueue_script( 'layout_grid', get_stylesheet_directory_uri() . "/assets/js/layout_grid.js" , array('jquery'), true );
 }

@@ -1,3 +1,7 @@
+$blue: #1797A6;
+$green: #77B327;
+$black: #2D2D2D;
+$grey: #E5E5E7;
 %full_background_img {
 	position: absolute;
 	top: 0;
@@ -6,15 +10,7 @@
 	bottom: 0;
 	background-size: cover;
 }
-$blue: #1797A6;
-$green: #77B327;
-$black: #2D2D2D;
-$grey: #E5E5E7;
-body {
-	background-color: #fff;
-	font-family: 'Akademie Std';
-}
-.btn {
+%btn {
 	font-size: 24px;
 	line-height: 23px;
 	font-weight: 700;
@@ -26,6 +22,15 @@ body {
 	justify-content: center;
 	color: $blue;
 	border: 2px solid $blue;
+	background-color: transparent;
+	width: 100%;
+}
+body {
+	background-color: #fff;
+	font-family: 'Akademie Std';
+}
+.btn {
+	@extend %btn;
 	&.blue {
 		color: $blue;
 		border-color: $blue;
@@ -141,6 +146,9 @@ body {
 		.facts {
 			margin-top: 160px;
 			display: flex;
+			.summary {
+				margin-top: 20px;
+			}
 		}
 		.big_number {
 			color: $blue;
@@ -160,6 +168,49 @@ body {
 		}
 		.call_to_action {
 			margin-top: 100px;
+		}
+	}
+}
+.site-footer {
+	padding-top: 120px;
+	padding-bottom: 60px;
+	background-color: $black;
+	.copyright {
+		border-top: 1px solid #fff;
+		padding-top: 60px;
+		margin-top: 60px;
+	}
+}
+.gform_wrapper {
+	.gform_heading {
+		display: none;
+	}
+	.gfield {
+		+ .gfield {
+			margin-top: 60px;
+		}
+		.gfield_label {
+			display: none;
+		}
+		select,
+		input[type="text"] {
+			background-color: transparent;
+			color: #777;
+			border: 0 none transparent;
+			height: 56px !important;
+			line-height: 56px !important;
+			font-size: 30px !important;
+			border-bottom: 1px solid #fff;
+			padding-left: 0 !important;
+		}
+	}
+	.gform_footer {
+		padding: 0;
+		margin: 80px 0 0 0;
+		input[type="submit"] {
+			@extend %btn;
+			color: #fff;
+			border-color: #fff;
 		}
 	}
 }
