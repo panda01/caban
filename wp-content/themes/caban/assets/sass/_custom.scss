@@ -47,6 +47,7 @@ body {
 
 .module {
 	&.hero_section {
+		position: relative;
 		height: 100vh;
 		clip: rect(0, auto, auto, 0);
 		clip-path: inset(0 0 0 0);
@@ -132,7 +133,6 @@ body {
 		}
 		.diagram_img {
 			position: relative;
-			top: -150px;
 		}
 	}
 	&.solution_in_depth {
